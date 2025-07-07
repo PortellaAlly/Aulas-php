@@ -16,7 +16,6 @@
         echo "Conexão falhou ):";
     }
 
-
     // Monta a operação que será feita.
     $sql = "SELECT * FROM alunos"; // Pegar todos os registros da tabela alunos
     $resposta = mysqli_query($conexao, $sql); // Função para executar a operação
