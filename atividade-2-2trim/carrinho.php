@@ -1,11 +1,26 @@
 <?php
 session_start();
 
-// Definir produtos disponíveis (mesma estrutura da página de produtos)
+// Definir produtos disponíveis com URLs de imagens da web (mesma estrutura da página de produtos)
 $produtos = array(
-    'produto-1' => array('nome' => 'Smartphone Galaxy', 'preco' => 899.99, 'descricao' => 'Smartphone Android com 128GB de armazenamento'),
-    'produto-2' => array('nome' => 'Notebook Dell', 'preco' => 2299.99, 'descricao' => 'Notebook Intel i5 com 8GB RAM e SSD 256GB'),
-    'produto-3' => array('nome' => 'Fone Bluetooth', 'preco' => 199.99, 'descricao' => 'Fone de ouvido sem fio com cancelamento de ruído')
+    'produto-1' => array(
+        'nome' => 'Smartphone Galaxy', 
+        'preco' => 899.99, 
+        'descricao' => 'Smartphone Android com 128GB de armazenamento',
+        'imagem' => 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+    ),
+    'produto-2' => array(
+        'nome' => 'Notebook Dell', 
+        'preco' => 2299.99, 
+        'descricao' => 'Notebook Intel i5 com 8GB RAM e SSD 256GB',
+        'imagem' => 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+    ),
+    'produto-3' => array(
+        'nome' => 'Fone Bluetooth', 
+        'preco' => 199.99, 
+        'descricao' => 'Fone de ouvido sem fio com cancelamento de ruído',
+        'imagem' => 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+    )
 );
 
 // Verificar se existe carrinho na sessão
@@ -66,7 +81,7 @@ foreach ($carrinho as $codigo => $quantidade) {
                                     <tr>
                                         <td>
                                             <div class="produto-carrinho">
-                                                <img src="imagens/<?php echo $codigo; ?>.jpg" alt="<?php echo $produtos[$codigo]['nome']; ?>" onerror="this.src='imagens/placeholder.jpg'">
+                                                <img src="<?php echo $produtos[$codigo]['imagem']; ?>" alt="<?php echo $produtos[$codigo]['nome']; ?>">
                                                 <div class="produto-detalhes">
                                                     <h4><?php echo $produtos[$codigo]['nome']; ?></h4>
                                                     <p><?php echo $produtos[$codigo]['descricao']; ?></p>
