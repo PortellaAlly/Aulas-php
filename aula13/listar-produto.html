@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Produto</title>
+</head>
+<body>
+    <script>
+        function pesquisarProduto(nome){
+            // console.log(nome)
+            var ajax = new XMLHttpRequest(); 
+            ajax.open("GET", "http://localhost/aula13/produto.php?nome="+nome);
+            ajax.send(); 
+            console.log(ajax);
+        }
+    </script>
+    <label>
+        Nome do Produto:
+    </label>
+    <input type="text" oninput="pesquisarProduto(value)"/>
+    <div id="produtos">
+
+    </div>
+</body>
+</html>
