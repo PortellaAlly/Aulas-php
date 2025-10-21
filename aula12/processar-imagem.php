@@ -3,14 +3,8 @@
     // Estabelecer a conexão com a base de dados
     // Este programa PHP insere as informações da imagem no banco de dados
     // Também faz uma cópia da imagem em um diretório no servidor
-    $bd_local = "localhost";
-    $bd_admin = "root";
-    $bd_senha = "";
-    $bd_nome = "bd-imagem";
-
-    // Efetua a conexão com a base de dados
-    $conexao = mysqli_connect($bd_local, $bd_admin, $bd_senha, $bd_nome);
-
+    require_once "config/conexao.php";
+    
     // Pega todos os arquivos de imagens enviados
     $imagens = $_FILES["imagens"];
     
